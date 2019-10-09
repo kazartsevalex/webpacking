@@ -35,7 +35,7 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postss',
+              ident: 'postcss',
               plugins: () => [
                 autoprefixer({
                   browsers: [
@@ -47,6 +47,10 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|webp)$/,
+        loader: 'url-loader?limit=8000&name=images/[name].[ext]'
       }
     ]
   }
