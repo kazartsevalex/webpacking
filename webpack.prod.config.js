@@ -1,10 +1,11 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
-  mode: 'development',
-  devtool: false,
+  mode: 'production',
+  devtool: 'cheap-module-source-map',
   entry: './src/index.js',
   performance: {
     hints: false
@@ -17,6 +18,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx']
+  },
+  optimization: {
+    minimize: true
   },
   module: {
     rules: [
