@@ -2,7 +2,9 @@ import React from 'react';
 
 const asyncComponent = (importComponent) => {
   return class extends React.Component {
-    state = { component: null }
+    constructor() {
+      this.state = { component: null }
+    }
 
     componentDidMount() {
       importComponent()
